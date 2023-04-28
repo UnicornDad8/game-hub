@@ -1,7 +1,5 @@
 .navbar {
   grid-area: navbar;
-  background-color: #fed330;
-  padding: 20px;
 }
 .main-container {
   grid-area: content;
@@ -28,11 +26,14 @@ footer {
 }
 @media (max-width: 900px) {
   .layout-container {
-    grid-template-columns: 4fr;
+    grid-template-columns: 3fr;
     grid-template-areas:
       "navbar"
-      "sidebar"
       "content"
       "footer";
+  }
+
+  .aside-container {
+    display: none;
   }
 }
