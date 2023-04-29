@@ -1,7 +1,5 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, InputHTMLAttributes, useState } from "react";
 import logo from "../../assets/logo.webp";
-import Sun from "../../assets/Sun.svg";
-import Moon from "../../assets/Moon.svg";
 import style from "./Navbar.module.css";
 
 const Navbar = () => {
@@ -15,7 +13,7 @@ const Navbar = () => {
     document.querySelector("body")?.setAttribute("data-theme", "ligth");
   };
 
-  const toggleTheme = (e: ChangeEvent) => {
+  const toggleTheme = (e: ChangeEvent<HTMLInputElement>) => {
     updateChecked(!checked);
 
     if (!checked) {
@@ -37,7 +35,7 @@ const Navbar = () => {
             checked ? style["Toggle--checked"] : style[""]
           }`}
         >
-          <input type="checkbox" value={checked} onChange={toggleTheme} />
+          <input type="checkbox" checked={checked} onChange={toggleTheme} />
 
           <div className={style["Toggle__slider"]} />
           <small className={style["Toggle__text"]}>Night</small>
