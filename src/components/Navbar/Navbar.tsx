@@ -1,9 +1,10 @@
 import { ChangeEvent, InputHTMLAttributes, useState } from "react";
 import logo from "../../assets/logo.webp";
+import Switch from "../Switch";
 import style from "./Navbar.module.css";
 
 const Navbar = () => {
-  const [checked, updateChecked] = useState(false);
+  const [isChecked, setChecked] = useState(false);
 
   const setDarkMode = () => {
     document.querySelector("body")?.setAttribute("data-theme", "dark");
@@ -14,9 +15,9 @@ const Navbar = () => {
   };
 
   const toggleTheme = (e: ChangeEvent<HTMLInputElement>) => {
-    updateChecked(!checked);
+    setChecked(!isChecked);
 
-    if (!checked) {
+    if (!isChecked) {
       setDarkMode();
     } else {
       setLightMode();
@@ -29,19 +30,7 @@ const Navbar = () => {
         <img src={logo} alt="logo" width="60px" height="60px" />
         <h3>Navbar</h3>
       </div>
-      <div>
-        <label
-          className={`${style["Toggle"]} ${
-            checked ? style["Toggle--checked"] : style[""]
-          }`}
-        >
-          <input type="checkbox" checked={checked} onChange={toggleTheme} />
-
-          <div className={style["Toggle__slider"]} />
-          <small className={style["Toggle__text"]}>Night</small>
-          <small className={style["Toggle__text"]}>Day</small>
-        </label>
-      </div>
+      <Switch handleChange={toggleTheme} isChecked={isChecked} label="Day" />
     </nav>
   );
 };

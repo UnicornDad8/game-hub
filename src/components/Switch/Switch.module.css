@@ -1,0 +1,57 @@
+/* -------- Switch Button -------- */
+.Toggle {
+  align-items: center;
+  background-color: #f6d365;
+  border: 2px solid #454545;
+  border-radius: 3rem;
+  color: #fff;
+  display: flex;
+  height: calc(3rem + 0.25rem * 3);
+  justify-content: space-around;
+  padding: 0.25rem;
+  position: relative;
+  transition: all 0.2s ease-out;
+  width: 8rem;
+}
+
+.Toggle--checked {
+  background-color: #434343;
+  border-color: #fda085;
+}
+
+.Toggle__slider {
+  background-color: #fda085;
+  border: 2px solid #fda085;
+  border-radius: 50%;
+  content: "";
+  left: -0.25rem;
+  height: 4rem;
+  width: 4rem;
+  position: absolute;
+  transform: translateX(0);
+  transition: all 0.2s ease-out;
+}
+
+.Toggle__text {
+  text-align: center;
+  width: 50%;
+  font-size: 12px;
+}
+
+input:checked + .Toggle__slider {
+  background-color: #646464;
+  border: 2px solid #646464;
+  transform: translateX(calc(8rem - 3rem - 0.25rem * 3));
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.small-left {
+  margin-left: 30px;
+}
+
+.small-right {
+  margin-right: 30px;
+}
