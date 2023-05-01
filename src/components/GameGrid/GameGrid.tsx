@@ -1,4 +1,6 @@
 import useGames from "../../hooks/useGames";
+import GameCard from "../GameCard";
+import style from "./GameGrid.module.css";
 
 const GameGrid = () => {
   const { games, error } = useGames();
@@ -6,9 +8,11 @@ const GameGrid = () => {
   return (
     <div>
       {error && <p>{error}</p>}
-      <ul>
-        {games.map((game) => (
-          <li key={game.id}>{game.name}</li>
+      <ul className={style["game-card__grid"]}>
+        {games.map((game, i) => (
+          <li key={game.id} className={style[`game-${i + 1}`]}>
+            <GameCard game={game} />
+          </li>
         ))}
       </ul>
     </div>

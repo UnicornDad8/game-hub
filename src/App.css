@@ -3,12 +3,11 @@
 }
 .main-container {
   grid-area: content;
-  background-color: #20bf6b;
-  padding: 20px;
+  justify-content: center;
+  background: var(--bg-light-gray);
 }
 .aside-container {
   grid-area: sidebar;
-  padding: 20px;
   background-color: #45aaf2;
 }
 footer {
@@ -24,7 +23,7 @@ footer {
     "sidebar content"
     "footer  footer";
 }
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .layout-container {
     grid-template-columns: 3fr;
     grid-template-areas:
@@ -35,5 +34,6 @@ footer {
 
   .aside-container {
     display: none;
+    width: 0px;
   }
 }

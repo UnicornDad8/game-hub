@@ -1,0 +1,50 @@
+.game-card__grid {
+  list-style: none;
+  padding: 10px;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+  display: grid;
+  /* Define Auto Row size */
+  grid-auto-rows: 400px;
+  /*Define our columns */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 300px));
+  justify-content: center;
+  grid-gap: 1em;
+}
+
+@media only screen and (max-width: 900px) {
+  .game-card__grid {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .game-card__grid {
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .game-card__grid li {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+  }
+}
+
+.game-card__grid li {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.game-card__grid li:nth-child(odd) {
+  background-color: var(--bg-white);
+}
+
+.game-card__grid li:nth-child(even) {
+  background-color: var(--bg-white-light);
+}
