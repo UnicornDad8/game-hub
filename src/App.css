@@ -1,5 +1,6 @@
 .navbar {
   grid-area: navbar;
+  box-shadow: var(--shadow-navbar) 0px 7px 29px 0px;
 }
 .main-container {
   grid-area: content;

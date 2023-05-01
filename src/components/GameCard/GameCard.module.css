@@ -27,3 +27,7 @@
   font-size: 24px;
   font-weight: 900;
 }
+
+.game-card__body header {
+  margin-bottom: 6px;
+}

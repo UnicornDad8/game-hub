@@ -1,4 +1,5 @@
 import { Game } from "../../hooks/useGames";
+import PlatformIcons from "../PlatformIcons";
 import style from "./GameCard.module.css";
 
 interface GameCardProps {
@@ -13,6 +14,9 @@ const GameCard = ({ game }: GameCardProps) => {
       </div>
       <div className={style["game-card__body"]}>
         <header>{game.name}</header>
+        <PlatformIcons
+          platforms={game.parent_platforms.map((p) => p.platform)}
+        />
       </div>
     </div>
   );
