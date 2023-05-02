@@ -10,10 +10,13 @@
 .aside-container {
   grid-area: sidebar;
   background-color: #45aaf2;
+  min-height: 100vh;
 }
 footer {
-  padding: 20px;
+  position: relative;
+  bottom: 0;
   grid-area: footer;
+  width: 100%;
   background-color: #fd9644;
 }
 .layout-container {

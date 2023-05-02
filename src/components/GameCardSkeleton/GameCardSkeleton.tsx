@@ -9,12 +9,12 @@ const GameCardSkeleton: FC = () => {
     <div className={style["card-skeleton__grid"]}>
       {skeletons.map((sk, i) => (
         <div className={style["card-skeleton"]}>
-          <Skeleton height={280} width={280} />
+          <Skeleton height={280} width={280} style={{ borderRadius: 6 }} />
           <Skeleton
             height={30}
             width={280}
             count={4}
-            style={{ marginTop: 8 }}
+            style={{ marginTop: 8, borderRadius: 6 }}
           />
         </div>
       ))}
