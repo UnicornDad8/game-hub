@@ -6,12 +6,12 @@ import GameCardSkeleton from "../GameCardSkeleton";
 import style from "./GameGrid.module.css";
 
 const GameGrid: FC = () => {
-  const { games: fetcher, error, isLoading } = useGames();
+  const { data, error, isLoading } = useGames();
 
   return (
     <SWRConfig
       value={{
-        fetcher,
+        data,
         suspense: true,
       }}
     >
@@ -19,7 +19,7 @@ const GameGrid: FC = () => {
         {error && <p>{error}</p>}
 
         <ul className={style["game-card__grid"]}>
-          {fetcher.map((game, i) => (
+          {data.map((game, i) => (
             <li key={game.id} className={style[`game-${i + 1}`]}>
               <GameCard game={game} />
             </li>

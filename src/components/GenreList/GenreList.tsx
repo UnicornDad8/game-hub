@@ -1,12 +1,12 @@
-import useGenres from "../../hooks/useGenres";
+import useGenre from "../../hooks/useGenres";
 import style from "./GenreList.module.css";
 
 const GenreList = () => {
-  const { genres, error, isLoading } = useGenres();
+  const { data, error, isLoading } = useGenre();
 
   return (
     <ul className={style["genre-container"]}>
-      {genres.map((genre) => (
+      {data.map((genre) => (
         <li key={genre.id} className={style["genre-item"]}>
           {genre.name}
         </li>
