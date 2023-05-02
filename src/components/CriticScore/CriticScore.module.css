@@ -1,0 +1,19 @@
+.badge {
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.green {
+  background: var(--bg-success-color);
+}
+
+.yellow {
+  background: var(--bg-warning-color);
+}
+
+.red {
+  background: var(--bg-danger-color);
+}

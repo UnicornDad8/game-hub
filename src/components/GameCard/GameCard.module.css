@@ -28,6 +28,9 @@
   font-weight: 900;
 }
 
-.game-card__body header {
-  margin-bottom: 6px;
+.platform-icons__box {
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

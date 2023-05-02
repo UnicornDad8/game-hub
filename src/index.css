@@ -33,7 +33,7 @@ html {
   --bg-warning-color: #fec901;
   --bg-warning-ligth: #fee480;
   --bg-white: #fff;
-  --bg-white-light: #cecbcb;
+  --bg-white-light: #e7e7e7;
   --bg-light-gray: #f1f1f1;
 
   --text-main-color: #4188ff;
@@ -45,7 +45,7 @@ html {
   --text-warning-color: #fec901;
   --text-warning-ligth: #fee480;
   --text-white: #fff;
-  --text-white-light: #cecbcb;
+  --text-white-light: #e7e7e7;
   --text-light-gray: #f1f1f1;
   --text-dark-gray: #434343;
 
