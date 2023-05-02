@@ -20,15 +20,17 @@ interface PlatformIconsProps {
 
 const PlatformIcons = ({ platforms }: PlatformIconsProps) => {
   const iconMap: { [key: string]: ReactElement<IconType> } = {
-    pc: <FaWindows color="#9f9d9d" />,
-    playstation: <FaPlaystation color="#9f9d9d" />,
-    xbox: <FaXbox color="#9f9d9d" />,
-    nintendo: <SiNintendo color="#9f9d9d" />,
-    mac: <FaApple color="#9f9d9d" />,
-    linux: <FaLinux color="#9f9d9d" />,
-    android: <FaAndroid color="#9f9d9d" />,
-    ios: <MdPhoneIphone color="#9f9d9d" />,
-    web: <BsGlobe color="#9f9d9d" />,
+    pc: <FaWindows color="#9f9d9d" className={style["icon-margin"]} />,
+    playstation: (
+      <FaPlaystation color="#9f9d9d" className={style["icon-margin"]} />
+    ),
+    xbox: <FaXbox color="#9f9d9d" className={style["icon-margin"]} />,
+    nintendo: <SiNintendo color="#9f9d9d" className={style["icon-margin"]} />,
+    mac: <FaApple color="#9f9d9d" className={style["icon-margin"]} />,
+    linux: <FaLinux color="#9f9d9d" className={style["icon-margin"]} />,
+    android: <FaAndroid color="#9f9d9d" className={style["icon-margin"]} />,
+    ios: <MdPhoneIphone color="#9f9d9d" className={style["icon-margin"]} />,
+    web: <BsGlobe color="#9f9d9d" className={style["icon-margin"]} />,
   };
 
   return (

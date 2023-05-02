@@ -6,3 +6,7 @@
 .icons-box {
   display: flex;
 }
+
+.icon-margin {
+  margin-right: 6px;
+}

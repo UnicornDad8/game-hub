@@ -1,21 +1,33 @@
+import { FC } from "react";
 import useGames from "../../hooks/useGames";
 import GameCard from "../GameCard";
+import { BareFetcher, SWRConfig } from "swr";
+import GameCardSkeleton from "../GameCardSkeleton";
 import style from "./GameGrid.module.css";
 
-const GameGrid = () => {
-  const { games, error } = useGames();
+const GameGrid: FC = () => {
+  const { games: fetcher, error, isLoading } = useGames();
 
   return (
-    <div>
-      {error && <p>{error}</p>}
-      <ul className={style["game-card__grid"]}>
-        {games.map((game, i) => (
-          <li key={game.id} className={style[`game-${i + 1}`]}>
-            <GameCard game={game} />
-          </li>
-        ))}
-      </ul>
-    </div>
+    <SWRConfig
+      value={{
+        fetcher,
+        suspense: true,
+      }}
+    >
+      <div>
+        {error && <p>{error}</p>}
+
+        <ul className={style["game-card__grid"]}>
+          {fetcher.map((game, i) => (
+            <li key={game.id} className={style[`game-${i + 1}`]}>
+              <GameCard game={game} />
+            </li>
+          ))}
+          {isLoading && <GameCardSkeleton />}
+        </ul>
+      </div>
+    </SWRConfig>
   );
 };
 

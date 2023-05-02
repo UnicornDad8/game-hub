@@ -1,6 +1,8 @@
 import { Game } from "../../hooks/useGames";
 import PlatformIcons from "../PlatformIcons";
 import CriticScore from "../CriticScore";
+import getCroppedImageUrl from "../../services/image-url";
+
 import style from "./GameCard.module.css";
 
 interface GameCardProps {
@@ -11,7 +13,7 @@ const GameCard = ({ game }: GameCardProps) => {
   return (
     <div className={style["game-card"]}>
       <div className={style["game-card__image"]}>
-        <img src={game.background_image} />
+        <img src={getCroppedImageUrl(game.background_image)} />
       </div>
       <div className={style["game-card__body"]}>
         <header>{game.name}</header>
