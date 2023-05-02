@@ -13,11 +13,13 @@
   min-height: 100vh;
 }
 footer {
-  position: relative;
-  bottom: 0;
   grid-area: footer;
   width: 100%;
-  background-color: #fd9644;
+  background-color: var(--bg-white);
+  color: var(--text-dark-gray);
+  font-size: 14px;
+  text-align: center;
+  padding: 10px 20px;
 }
 .layout-container {
   display: grid;

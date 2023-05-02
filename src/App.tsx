@@ -12,7 +12,9 @@ function App() {
       <main className="main-container">
         <GameGrid />
       </main>
-      <footer>footer</footer>
+      <footer>
+        <p>&copy; 2019 by Cecilia Benitez</p>
+      </footer>
     </div>
   );
 }
