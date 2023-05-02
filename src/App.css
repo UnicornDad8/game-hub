@@ -1,6 +1,7 @@
 .navbar {
   grid-area: navbar;
   box-shadow: var(--shadow-navbar) 0px 7px 29px 0px;
+  margin-bottom: 60px;
 }
 .main-container {
   grid-area: content;
@@ -9,7 +10,7 @@
 }
 .aside-container {
   grid-area: sidebar;
-  background-color: #45aaf2;
+  background-color: var(--bg-white);
   min-height: 100vh;
 }
 footer {
@@ -20,6 +21,7 @@ footer {
   font-size: 14px;
   text-align: center;
   padding: 10px 20px;
+  box-shadow: var(--shadow-navbar) 0px 7px 29px 0px;
 }
 .layout-container {
   display: grid;

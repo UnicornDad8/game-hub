@@ -1,0 +1,11 @@
+.genre-container {
+  color: var(--text-dark-gray);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  margin-top: 20px;
+}
+
+.genre-item {
+  padding: 10px 20px;
+}
