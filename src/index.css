@@ -88,14 +88,21 @@ body {
   font-size: 20px;
 }
 
+.center-spinner {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
 .spinner-border {
-  height: 120px;
-  width: 120px;
+  height: 60px;
+  width: 60px;
   border: 6px solid;
   border-color: var(--bg-main-color) transparent var(--bg-main-color-ligth)
     transparent;
   border-radius: 50%;
   animation: spin 1.4s linear infinite;
+  margin: 30px auto;
 }
 
 @keyframes spin {

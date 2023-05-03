@@ -22,15 +22,6 @@ const Switch = ({ isChecked, handleChange, label }: SwitchProps) => {
           onChange={handleChange}
         />
         <div className={style["Toggle__slider"]} />
-        {!isChecked ? (
-          <small className={`${style["Toggle__text"]} ${style["small-left"]}`}>
-            Day
-          </small>
-        ) : (
-          <small className={`${style["Toggle__text"]} ${style["small-right"]}`}>
-            Night
-          </small>
-        )}
       </label>
     </div>
   );

@@ -8,4 +8,15 @@
 
 .genre-item {
   padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.genre-item img {
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.genre-item p {
+  font-size: 24px;
 }

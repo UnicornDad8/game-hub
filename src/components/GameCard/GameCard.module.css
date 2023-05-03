@@ -5,7 +5,7 @@
 }
 
 .game-card__image {
-  width: 320px;
+  width: auto;
   height: 280px;
 }
 
