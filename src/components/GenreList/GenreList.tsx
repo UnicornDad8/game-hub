@@ -1,8 +1,13 @@
-import useGenre from "../../hooks/useGenres";
+import useGenre, { Genre } from "../../hooks/useGenres";
 import getCroppedImageUrl from "../../services/image-url";
+import Button from "../Button";
 import style from "./GenreList.module.css";
 
-const GenreList = () => {
+interface GenreListProps {
+  onSelectGenre: (genre: Genre) => void;
+}
+
+const GenreList = ({ onSelectGenre }: GenreListProps) => {
   const { data, error, isLoading } = useGenre();
 
   if (error) return null;
@@ -16,13 +21,15 @@ const GenreList = () => {
       )}
       {data.map((genre) => (
         <li key={genre.id} className={style["genre-item"]}>
-          <img
-            src={getCroppedImageUrl(genre.image_background)}
-            alt={`${genre.name} genre`}
-            width={60}
-            height={60}
-          />
-          <p>{genre.name}</p>
+          <Button color="link" onClick={() => onSelectGenre(genre)}>
+            <img
+              src={getCroppedImageUrl(genre.image_background)}
+              alt={`${genre.name} genre`}
+              width={60}
+              height={60}
+            />
+            {genre.name}
+          </Button>
         </li>
       ))}
     </ul>
