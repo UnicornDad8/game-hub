@@ -11,6 +11,16 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  font-weight: 500;
+  color: var(--text-dark-gray);
+  text-decoration: underline;
+}
+
+.highlight {
+  text-decoration: none;
+  font-weight: 900;
+  background: var(--bg-main-color);
+  color: #fff;
 }
 
 .genre-item img {

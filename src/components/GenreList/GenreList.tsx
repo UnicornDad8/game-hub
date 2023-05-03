@@ -5,9 +5,10 @@ import style from "./GenreList.module.css";
 
 interface GenreListProps {
   onSelectGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
 }
 
-const GenreList = ({ onSelectGenre }: GenreListProps) => {
+const GenreList = ({ selectedGenre, onSelectGenre }: GenreListProps) => {
   const { data, error, isLoading } = useGenre();
 
   if (error) return null;
@@ -20,7 +21,14 @@ const GenreList = ({ onSelectGenre }: GenreListProps) => {
         </div>
       )}
       {data.map((genre) => (
-        <li key={genre.id} className={style["genre-item"]}>
+        <li
+          key={genre.id}
+          className={
+            genre.id === selectedGenre?.id
+              ? `${style["genre-item"]} ${style["highlight"]}`
+              : style["genre-item"]
+          }
+        >
           <Button color="link" onClick={() => onSelectGenre(genre)}>
             <img
               src={getCroppedImageUrl(genre.image_background)}
@@ -28,7 +36,7 @@ const GenreList = ({ onSelectGenre }: GenreListProps) => {
               width={60}
               height={60}
             />
-            {genre.name}
+            <p>{genre.name}</p>
           </Button>
         </li>
       ))}
