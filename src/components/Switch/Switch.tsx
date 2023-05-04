@@ -1,27 +1,22 @@
+import { ChangeEvent } from "react";
 import style from "./Switch.module.css";
 
 interface SwitchProps {
   isChecked: boolean;
-  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  label: string;
+  handleChange: () => void;
 }
 
-const Switch = ({ isChecked, handleChange, label }: SwitchProps) => {
+const Switch = ({ isChecked, handleChange }: SwitchProps) => {
   return (
-    <div>
+    <div className={style["checkbox-box"]}>
       <label
-        className={`${style["Toggle"]} ${
-          isChecked ? style["Toggle--checked"] : style[""]
+        className={`${style["container"]} ${
+          isChecked ? style["toggle--checked"] : ""
         }`}
-        htmlFor={label}
       >
-        <input
-          type="checkbox"
-          id={label}
-          checked={isChecked}
-          onChange={handleChange}
-        />
-        <div className={style["Toggle__slider"]} />
+        <input type="checkbox" value={isChecked} onChange={handleChange} />
+        <div className={style["checkmark"]} />
+        toggle theme
       </label>
     </div>
   );

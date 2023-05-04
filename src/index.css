@@ -52,7 +52,7 @@ html {
   --icons-gray: #9f9d9d;
 }
 
-[data-theme="dark"] {
+.dark {
   --bg-main-color: #4188ff;
   --bg-main-color-ligth: #accbff;
   --bg-danger-color: #ed3419;

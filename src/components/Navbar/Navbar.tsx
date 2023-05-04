@@ -1,28 +1,14 @@
 import { ChangeEvent, InputHTMLAttributes, useState } from "react";
+import Cookies from "js-cookie";
+import { useDispatch, useSelector } from "react-redux";
 import logo from "../../assets/logo.webp";
 import Switch from "../Switch";
 import style from "./Navbar.module.css";
 
 const Navbar = () => {
-  const [isChecked, setChecked] = useState(false);
-
-  const setDarkMode = () => {
-    document.querySelector("body")?.setAttribute("data-theme", "dark");
-  };
-
-  const setLightMode = () => {
-    document.querySelector("body")?.setAttribute("data-theme", "ligth");
-  };
-
-  const toggleTheme = (e: ChangeEvent<HTMLInputElement>) => {
-    setChecked(!isChecked);
-
-    if (!isChecked) {
-      setDarkMode();
-    } else {
-      setLightMode();
-    }
-  };
+  const dispatch = useDispatch();
+  const { darkTheme } = useSelector((state) => ({ ...state }));
+  const [checked, updateChecked] = useState(false);
 
   return (
     <nav className={style["navbar"]}>
@@ -30,7 +16,19 @@ const Navbar = () => {
         <img src={logo} alt="logo" width="60px" height="60px" />
         <h3>Navbar</h3>
       </div>
-      <Switch handleChange={toggleTheme} isChecked={isChecked} label="Day" />
+      <Switch
+        handleChange={() => {
+          updateChecked(!checked);
+          if (darkTheme) {
+            Cookies.set("darkTheme", false);
+            dispatch({ type: "LIGHT" });
+          } else {
+            Cookies.set("darkTheme", true);
+            dispatch({ type: "DARK" });
+          }
+        }}
+        isChecked={checked}
+      />
     </nav>
   );
 };
