@@ -6,11 +6,15 @@ import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
 import PlatformSelector from "./components/PlatformSelector";
 import { Genre } from "./hooks/useGenres";
+import { Platform } from "./hooks/useGames";
 import "./App.css";
 
 function App() {
-  const { user, darkTheme } = useSelector((state) => ({ ...state }));
+  const { darkTheme } = useSelector((state) => ({ ...state }));
   const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
+  const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(
+    null
+  );
 
   return (
     <SkeletonTheme
@@ -28,8 +32,14 @@ function App() {
           />
         </aside>
         <main className="main-container">
-          <PlatformSelector />
-          <GameGrid selectedGenre={selectedGenre} />
+          <PlatformSelector
+            selectedPlatform={selectedPlatform}
+            onSelectPlatform={(platform) => setSelectedPlatform(platform)}
+          />
+          <GameGrid
+            selectedPlatform={selectedPlatform}
+            selectedGenre={selectedGenre}
+          />
         </main>
         <footer>
           <p>&copy; 2019 by Cecilia Benitez</p>

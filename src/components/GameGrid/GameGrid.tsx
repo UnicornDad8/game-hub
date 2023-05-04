@@ -1,5 +1,5 @@
 import { FC } from "react";
-import useGames from "../../hooks/useGames";
+import useGames, { Platform } from "../../hooks/useGames";
 import GameCard from "../GameCard";
 import { SWRConfig } from "swr";
 import GameCardSkeleton from "../GameCardSkeleton";
@@ -8,10 +8,11 @@ import style from "./GameGrid.module.css";
 
 interface GameGridProps {
   selectedGenre: Genre | null;
+  selectedPlatform: Platform | null;
 }
 
-const GameGrid: FC = ({ selectedGenre }: GameGridProps) => {
-  const { data, error, isLoading } = useGames(selectedGenre);
+const GameGrid: FC = ({ selectedGenre, selectedPlatform }: GameGridProps) => {
+  const { data, error, isLoading } = useGames(selectedGenre, selectedPlatform);
 
   return (
     <SWRConfig

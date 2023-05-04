@@ -2,8 +2,17 @@ import { useState } from "react";
 import style from "./PlatformSelector.module.css";
 import { FaChevronDown } from "react-icons/fa";
 import usePlatforms from "../../hooks/usePlatforms";
+import { Platform } from "../../hooks/useGames";
 
-const PlatformSelector = () => {
+interface PlatformSelectorProps {
+  onSelectPlatform: (platform: Platform) => void;
+  selectedPlatform: Platform | null;
+}
+
+const PlatformSelector = ({
+  onSelectPlatform,
+  selectedPlatform,
+}: PlatformSelectorProps) => {
   const { data, error } = usePlatforms();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -14,13 +23,20 @@ const PlatformSelector = () => {
   return (
     <div className={style["dropdown-container"]}>
       <div className={style["dropdown-header"]} onClick={toggling}>
-        <p>Select a platform</p>
+        <p>{selectedPlatform?.name || "Platforms"}</p>
         <FaChevronDown className={style["icon-arrow"]} />
       </div>
       {isOpen && (
         <ul className={style["dropdown-list"]}>
           {data.map((platform) => (
-            <li key={platform.id} className={style["list-item"]}>
+            <li
+              key={platform.id}
+              className={style["list-item"]}
+              onClick={() => {
+                onSelectPlatform(platform);
+                setIsOpen(false);
+              }}
+            >
               {platform.name}
             </li>
           ))}
