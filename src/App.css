@@ -7,6 +7,8 @@
   grid-area: content;
   justify-content: center;
   background: var(--bg-light-gray);
+  padding-top: 60px;
+  position: relative;
 }
 .aside-container {
   grid-area: sidebar;
