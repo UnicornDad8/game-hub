@@ -3,16 +3,15 @@ import useGames, { Platform } from "../../hooks/useGames";
 import GameCard from "../GameCard";
 import { SWRConfig } from "swr";
 import GameCardSkeleton from "../GameCardSkeleton";
-import { Genre } from "../../hooks/useGenres";
+import { GameQuery } from "../../App";
 import style from "./GameGrid.module.css";
 
 interface GameGridProps {
-  selectedGenre: Genre | null;
-  selectedPlatform: Platform | null;
+  gameQuery: GameQuery;
 }
 
-const GameGrid: FC = ({ selectedGenre, selectedPlatform }: GameGridProps) => {
-  const { data, error, isLoading } = useGames(selectedGenre, selectedPlatform);
+const GameGrid: FC = ({ gameQuery }: GameGridProps) => {
+  const { data, error, isLoading } = useGames(gameQuery);
 
   return (
     <SWRConfig
