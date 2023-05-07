@@ -1,9 +1,8 @@
 .dropdown-container {
-  width: 10.5em;
-  margin-right: 20px;
+  width: 12.5em;
   position: absolute;
   top: 30px;
-  left: 105px;
+  left: 330px;
 }
 
 .dropdown-header {

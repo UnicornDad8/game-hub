@@ -33,6 +33,14 @@ footer {
     "sidebar content"
     "footer  footer";
 }
+
+.selectors {
+  margin-top: -60px;
+  position: relative;
+  display: flex;
+  padding: 20px 30px;
+  padding-bottom: 60px;
+}
 @media (max-width: 1200px) {
   .layout-container {
     grid-template-columns: 3fr;
