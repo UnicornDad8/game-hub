@@ -8,7 +8,9 @@ const CriticScore = ({ score }: CriticScoreProps) => {
   let color = score > 75 ? "green" : score > 60 ? "yellow" : "red";
 
   return (
-    <div className={`${style["badge"]} ${style[`${color}`]}`}>{score}</div>
+    <div className={`${style["badge"]} ${style[`${color}`]}`}>
+      {score || "0"}
+    </div>
   );
 };
 
