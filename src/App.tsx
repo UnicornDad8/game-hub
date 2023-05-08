@@ -14,6 +14,7 @@ export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
   sortOrder: string;
+  searchText: string;
 }
 
 function App() {
@@ -27,7 +28,11 @@ function App() {
     >
       <div className={`layout-container ${darkTheme && "dark"}`}>
         <div className="navbar">
-          <Navbar />
+          <Navbar
+            onSearch={(searchText) =>
+              setGameQuery({ ...gameQuery, searchText })
+            }
+          />
         </div>
         <aside className="aside-container">
           <GenreList

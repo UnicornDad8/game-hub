@@ -6,7 +6,11 @@ import Switch from "../Switch";
 import SearchInput from "../SearchInput";
 import style from "./Navbar.module.css";
 
-const Navbar = () => {
+interface NavbarProps {
+  onSearch: (searchText: string) => void;
+}
+
+const Navbar = ({ onSearch }: NavbarProps) => {
   const dispatch = useDispatch();
   const { darkTheme } = useSelector((state) => ({ ...state }));
   const [checked, updateChecked] = useState(false);
@@ -17,7 +21,7 @@ const Navbar = () => {
         <img src={logo} alt="logo" width="60px" height="60px" />
         <h3>Navbar</h3>
       </div>
-      <SearchInput />
+      <SearchInput onSearch={onSearch} />
       <Switch
         handleChange={() => {
           updateChecked(!checked);
