@@ -40,6 +40,7 @@ footer {
   display: flex;
   padding: 20px 30px;
   padding-bottom: 60px;
+  width: 100%;
 }
 @media (max-width: 1200px) {
   .layout-container {
@@ -53,5 +54,14 @@ footer {
   .aside-container {
     display: none;
     width: 0px;
+  }
+
+  .selectors {
+    margin-top: -60px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 30px auto;
   }
 }

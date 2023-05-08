@@ -6,6 +6,13 @@
   left: 105px;
 }
 
+@media (max-width: 1200px) {
+  .dropdown-container {
+    position: relative;
+    left: 0;
+  }
+}
+
 .dropdown-header {
   margin-bottom: 10px;
   padding: 10px 20px;

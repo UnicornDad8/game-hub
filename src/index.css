@@ -48,7 +48,7 @@ html {
   --text-light-gray: #f1f1f1;
   --text-dark-gray: #434343;
 
-  --shadow-navbar: rgba(100, 100, 111, 0.2);
+  --shadow-navbar: rgba(100, 100, 111, 0.4);
   --icons-gray: #9f9d9d;
 }
 
@@ -78,7 +78,7 @@ html {
   --text-light-gray: #202020;
   --text-dark-gray: #f1f1f1;
 
-  --shadow-navbar: rgba(35, 35, 40, 0.2);
+  --shadow-navbar: rgba(35, 35, 40, 0.6);
   --icons-gray: #9f9d9d;
 }
 
