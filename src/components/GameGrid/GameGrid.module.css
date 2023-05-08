@@ -56,3 +56,10 @@
 .game-card__grid li:nth-child(even) {
   background-color: var(--bg-white);
 }
+
+.error-text {
+  margin: 30px auto;
+  color: var(--text-danger-color);
+  font-size: 18px;
+  text-align: center;
+}

@@ -1,12 +1,10 @@
 import Cookies from "js-cookie";
 
-export function themeReducer(
-  state = Cookies.get("darkTheme")
-    ? JSON.parse(Cookies.get("darkTheme"))
-    : false,
+const defaultState: any = Cookies.get("darkTheme")
+  ? JSON.parse(Cookies.get("darkTheme") || "")
+  : false;
 
-  action
-) {
+export function themeReducer(state = defaultState, action: any) {
   switch (action.type) {
     case "DARK":
       return true;

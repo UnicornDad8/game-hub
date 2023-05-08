@@ -19,7 +19,7 @@ export interface GameQuery {
 }
 
 function App() {
-  const { darkTheme } = useSelector((state) => ({ ...state }));
+  const { darkTheme } = useSelector((state: any) => ({ ...state }));
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
 
   return (

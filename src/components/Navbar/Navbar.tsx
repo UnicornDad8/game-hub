@@ -1,4 +1,4 @@
-import { ChangeEvent, InputHTMLAttributes, useState } from "react";
+import { useState } from "react";
 import Cookies from "js-cookie";
 import { useDispatch, useSelector } from "react-redux";
 import logo from "../../assets/logo.webp";
@@ -12,7 +12,7 @@ interface NavbarProps {
 
 const Navbar = ({ onSearch }: NavbarProps) => {
   const dispatch = useDispatch();
-  const { darkTheme } = useSelector((state) => ({ ...state }));
+  const { darkTheme } = useSelector((state: any) => ({ ...state }));
   const [checked, updateChecked] = useState(false);
 
   return (
@@ -26,10 +26,10 @@ const Navbar = ({ onSearch }: NavbarProps) => {
         handleChange={() => {
           updateChecked(!checked);
           if (darkTheme) {
-            Cookies.set("darkTheme", false);
+            Cookies.set("darkTheme", "false");
             dispatch({ type: "LIGHT" });
           } else {
-            Cookies.set("darkTheme", true);
+            Cookies.set("darkTheme", "true");
             dispatch({ type: "DARK" });
           }
         }}

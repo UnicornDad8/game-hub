@@ -1,4 +1,3 @@
-import { ChangeEvent } from "react";
 import style from "./Switch.module.css";
 
 interface SwitchProps {
@@ -11,10 +10,10 @@ const Switch = ({ isChecked, handleChange }: SwitchProps) => {
     <div className={style["checkbox-box"]}>
       <label
         className={`${style["container"]} ${
-          isChecked ? style["toggle--checked"] : ""
+          isChecked && style["toggle--checked"]
         }`}
       >
-        <input type="checkbox" value={isChecked} onChange={handleChange} />
+        <input type="checkbox" checked={isChecked} onChange={handleChange} />
         <div className={style["checkmark"]} />
         toggle theme
       </label>
