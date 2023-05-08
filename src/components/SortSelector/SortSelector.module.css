@@ -2,7 +2,7 @@
   width: 14.5em;
   position: absolute;
   top: 30px;
-  left: 330px;
+  left: calc(7% + 220px);
 }
 
 @media (max-width: 1200px) {

@@ -16,13 +16,13 @@ const GameCard = ({ game }: GameCardProps) => {
         <img src={getCroppedImageUrl(game.background_image)} />
       </div>
       <div className={style["game-card__body"]}>
-        <header>{game.name}</header>
         <div className={style["platform-icons__box"]}>
           <PlatformIcons
             platforms={game.parent_platforms.map((p) => p.platform)}
           />
           <CriticScore score={game.metacritic} />
         </div>
+        <header>{game.name}</header>
       </div>
     </div>
   );

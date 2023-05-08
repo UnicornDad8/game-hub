@@ -30,6 +30,7 @@
 
 .platform-icons__box {
   margin-top: 6px;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
