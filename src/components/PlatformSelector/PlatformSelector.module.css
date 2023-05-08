@@ -3,7 +3,7 @@
   margin-right: 20px;
   position: absolute;
   top: 30px;
-  left: 105px;
+  left: 110px;
 }
 
 @media (max-width: 1200px) {
@@ -25,16 +25,18 @@
   font-size: 18px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .icon-arrow {
+  margin-top: 5px;
   display: flex;
   align-items: center;
   color: var(--icons-gray);
 }
 
 .dropdown-list {
+  position: absolute;
+  top: 60px;
   list-style: none;
   margin: 0;
   border: 1px solid var(--bg-white-light);

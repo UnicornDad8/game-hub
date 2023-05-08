@@ -8,6 +8,7 @@ import PlatformSelector from "./components/PlatformSelector";
 import SortSelector from "./components/SortSelector";
 import { Genre } from "./hooks/useGenres";
 import { Platform } from "./hooks/useGames";
+import GameHeading from "./components/GameHeading";
 import "./App.css";
 
 export interface GameQuery {
@@ -41,19 +42,24 @@ function App() {
           />
         </aside>
         <main className="main-container">
-          <div className="selectors">
-            <PlatformSelector
-              selectedPlatform={gameQuery.platform}
-              onSelectPlatform={(platform) =>
-                setGameQuery({ ...gameQuery, platform })
-              }
-            />
-            <SortSelector
-              sortOrder={gameQuery.sortOrder}
-              onSelectSortOrder={(sortOrder) =>
-                setGameQuery({ ...gameQuery, sortOrder })
-              }
-            />
+          <div className="main-container__top">
+            <div className="heading">
+              <GameHeading gameQuery={gameQuery} />
+            </div>
+            <div className="selectors">
+              <PlatformSelector
+                selectedPlatform={gameQuery.platform}
+                onSelectPlatform={(platform) =>
+                  setGameQuery({ ...gameQuery, platform })
+                }
+              />
+              <SortSelector
+                sortOrder={gameQuery.sortOrder}
+                onSelectSortOrder={(sortOrder) =>
+                  setGameQuery({ ...gameQuery, sortOrder })
+                }
+              />
+            </div>
           </div>
           <GameGrid gameQuery={gameQuery} />
         </main>
