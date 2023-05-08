@@ -6,6 +6,11 @@
   margin-top: 30px;
 }
 
+.genre-container h2 {
+  padding: 10px 20px;
+  margin-top: 50px;
+}
+
 .genre-item {
   padding: 10px 20px;
   display: flex;
