@@ -1,0 +1,11 @@
+.emoji-box {
+  width: 25px;
+  height: 25px;
+  margin-top: 10px;
+}
+
+.emoji-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

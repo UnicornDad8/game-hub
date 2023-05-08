@@ -2,6 +2,7 @@ import { Game } from "../../hooks/useGames";
 import PlatformIcons from "../PlatformIcons";
 import CriticScore from "../CriticScore";
 import getCroppedImageUrl from "../../services/image-url";
+import Emoji from "../Emoji";
 
 import style from "./GameCard.module.css";
 
@@ -22,7 +23,10 @@ const GameCard = ({ game }: GameCardProps) => {
           />
           <CriticScore score={game.metacritic} />
         </div>
-        <header>{game.name}</header>
+        <header>
+          {game.name}
+          <Emoji rating={game.rating_top} />
+        </header>
       </div>
     </div>
   );
