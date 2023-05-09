@@ -1,6 +1,5 @@
-import { useState } from "react";
-import Cookies from "js-cookie";
-import { useDispatch, useSelector } from "react-redux";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 import logo from "../../assets/logo.webp";
 import Switch from "../Switch";
 import SearchInput from "../SearchInput";
@@ -11,9 +10,7 @@ interface NavbarProps {
 }
 
 const Navbar = ({ onSearch }: NavbarProps) => {
-  const dispatch = useDispatch();
-  const { darkTheme } = useSelector((state: any) => ({ ...state }));
-  const [checked, updateChecked] = useState(false);
+  const { toggleTheme, theme } = useContext(ThemeContext);
 
   return (
     <nav className={style["navbar"]}>
@@ -22,19 +19,7 @@ const Navbar = ({ onSearch }: NavbarProps) => {
         <h3>Navbar</h3>
       </div>
       <SearchInput onSearch={onSearch} />
-      <Switch
-        handleChange={() => {
-          updateChecked(!checked);
-          if (darkTheme) {
-            Cookies.set("darkTheme", "false");
-            dispatch({ type: "LIGHT" });
-          } else {
-            Cookies.set("darkTheme", "true");
-            dispatch({ type: "DARK" });
-          }
-        }}
-        isChecked={checked}
-      />
+      <Switch handleChange={toggleTheme} isChecked={theme === "dark"} />
     </nav>
   );
 };

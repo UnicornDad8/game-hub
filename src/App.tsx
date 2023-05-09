@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useState, useContext } from "react";
+import { ThemeContext } from "./context/ThemeContext";
 import { SkeletonTheme } from "react-loading-skeleton";
 import Navbar from "./components/Navbar";
 import GameGrid from "./components/GameGrid";
@@ -19,15 +19,15 @@ export interface GameQuery {
 }
 
 function App() {
-  const { darkTheme } = useSelector((state: any) => ({ ...state }));
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
+  const { theme } = useContext(ThemeContext);
 
   return (
     <SkeletonTheme
-      baseColor={darkTheme ? "#202020" : "#dddcdc"}
-      highlightColor={darkTheme ? "#444" : "#c2c0c0"}
+      baseColor={theme === "dark" ? "#202020" : "#eaeaea"}
+      highlightColor={theme === "dark" ? "#444" : "#c1c1c1"}
     >
-      <div className={`layout-container ${darkTheme && "dark"}`}>
+      <div className={`layout-container ${theme === "dark" && "dark"}`}>
         <div className="navbar">
           <Navbar
             onSearch={(searchText) =>
