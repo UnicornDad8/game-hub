@@ -3,6 +3,7 @@ import useGames from "../../hooks/useGames";
 import GameCard from "../GameCard";
 import GameCardSkeleton from "../GameCardSkeleton";
 import { GameQuery } from "../../App";
+import InfiniteScroll from "react-infinite-scroll-component";
 import style from "./GameGrid.module.css";
 
 interface GameGridProps {
@@ -21,8 +22,16 @@ const GameGrid = ({ gameQuery }: GameGridProps) => {
 
   if (error) <p className={style["error-text"]}>{error.message}</p>;
 
+  const fetchedGamesCount =
+    data?.pages.reduce((total, page) => total + page.results.length, 0) || 0;
+
   return (
-    <Fragment>
+    <InfiniteScroll
+      dataLength={fetchedGamesCount}
+      hasMore={!!hasNextPage}
+      next={() => fetchNextPage()}
+      loader={<div>Loading...</div>}
+    >
       <ul className={style["game-card__grid"]}>
         {data?.pages.map((page, i) => (
           <Fragment key={i}>
@@ -35,24 +44,7 @@ const GameGrid = ({ gameQuery }: GameGridProps) => {
         ))}
         {isLoading && <GameCardSkeleton />}
       </ul>
-      {hasNextPage && (
-        <button
-          className={`${style["btn"]} ${style["btn-primary"]} ${
-            style["btn-margin"]
-          } ${isFetchingNextPage && style["btn-opacity"]}`}
-          onClick={() => fetchNextPage()}
-          disabled={isFetchingNextPage}
-        >
-          {isFetchingNextPage ? (
-            <div className={style["stage"]}>
-              <div className={style["dot-elastic"]}></div>
-            </div>
-          ) : (
-            "Load More"
-          )}
-        </button>
-      )}
-    </Fragment>
+    </InfiniteScroll>
   );
 };
 
