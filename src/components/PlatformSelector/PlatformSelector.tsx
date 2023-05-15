@@ -28,7 +28,7 @@ const PlatformSelector = ({
       </div>
       {isOpen && (
         <ul className={style["dropdown-list"]}>
-          {data.map((platform) => (
+          {data?.results.map((platform) => (
             <li
               key={platform.id}
               className={style["list-item"]}
