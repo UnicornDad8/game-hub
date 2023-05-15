@@ -11,11 +11,11 @@ interface GameGridProps {
 const GameGrid = ({ gameQuery }: GameGridProps) => {
   const { data, error, isLoading } = useGames(gameQuery);
 
-  if (error) <p className={style["error-text"]}>{error}</p>;
+  if (error) <p className={style["error-text"]}>{error.message}</p>;
 
   return (
     <ul className={style["game-card__grid"]}>
-      {data.map((game, i) => (
+      {data?.results.map((game, i) => (
         <li key={game.id} className={style[`game-${i + 1}`]}>
           <GameCard game={game} />
         </li>
