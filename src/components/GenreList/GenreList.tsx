@@ -5,10 +5,10 @@ import style from "./GenreList.module.css";
 
 interface GenreListProps {
   onSelectGenre: (genre: Genre) => void;
-  selectedGenre: Genre | null;
+  selectedGenreId?: number;
 }
 
-const GenreList = ({ selectedGenre, onSelectGenre }: GenreListProps) => {
+const GenreList = ({ selectedGenreId, onSelectGenre }: GenreListProps) => {
   const { data, error, isLoading } = useGenre();
 
   if (error) return null;
@@ -26,7 +26,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: GenreListProps) => {
           <li
             key={genre.id}
             className={
-              genre.id === selectedGenre?.id
+              genre.id === selectedGenreId
                 ? `${style["genre-item"]} ${style["highlight"]}`
                 : style["genre-item"]
             }
