@@ -1,8 +1,7 @@
 import { useState } from "react";
 import style from "./PlatformSelector.module.css";
 import { FaChevronDown } from "react-icons/fa";
-import usePlatforms from "../../hooks/usePlatforms";
-import { Platform } from "../../hooks/useGames";
+import usePlatforms, { Platform } from "../../hooks/usePlatforms";
 
 interface PlatformSelectorProps {
   onSelectPlatform: (platform: Platform) => void;
