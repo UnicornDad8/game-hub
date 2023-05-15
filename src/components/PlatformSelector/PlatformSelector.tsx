@@ -2,6 +2,7 @@ import { useState } from "react";
 import style from "./PlatformSelector.module.css";
 import { FaChevronDown } from "react-icons/fa";
 import usePlatforms, { Platform } from "../../hooks/usePlatforms";
+import usePlatform from "../../hooks/usePlatform";
 
 interface PlatformSelectorProps {
   onSelectPlatform: (platform: Platform) => void;
@@ -13,10 +14,9 @@ const PlatformSelector = ({
   selectedPlatformId,
 }: PlatformSelectorProps) => {
   const { data, error } = usePlatforms();
+  const selectedPlatform = usePlatform(selectedPlatformId);
+
   const [isOpen, setIsOpen] = useState(false);
-  const selectedPlatform = data?.results.find(
-    (p) => p.id === selectedPlatformId
-  );
 
   const toggling = () => setIsOpen(!isOpen);
 
