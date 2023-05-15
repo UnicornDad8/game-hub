@@ -22,7 +22,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: GenreListProps) => {
             <div className="spinner-border" />
           </div>
         )}
-        {data.map((genre) => (
+        {data?.results.map((genre) => (
           <li
             key={genre.id}
             className={
