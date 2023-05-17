@@ -3,7 +3,6 @@ import PlatformIcons from "../PlatformIcons";
 import CriticScore from "../CriticScore";
 import getCroppedImageUrl from "../../services/image-url";
 import Emoji from "../Emoji";
-
 import style from "./GameCard.module.css";
 
 interface GameCardProps {
