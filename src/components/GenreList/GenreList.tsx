@@ -1,15 +1,13 @@
-import useGenre, { Genre } from "../../hooks/useGenres";
+import useGenre from "../../hooks/useGenres";
 import getCroppedImageUrl from "../../services/image-url";
+import useGameQueryStore from "../../store";
 import Button from "../Button";
 import style from "./GenreList.module.css";
 
-interface GenreListProps {
-  onSelectGenre: (genre: Genre) => void;
-  selectedGenreId?: number;
-}
-
-const GenreList = ({ selectedGenreId, onSelectGenre }: GenreListProps) => {
+const GenreList = () => {
   const { data, error, isLoading } = useGenre();
+  const selectedGenreId = useGameQueryStore((s) => s.gameQuery.genreId);
+  const setSelectedGenreId = useGameQueryStore((s) => s.setGenreId);
 
   if (error) return null;
 
@@ -31,7 +29,7 @@ const GenreList = ({ selectedGenreId, onSelectGenre }: GenreListProps) => {
                 : style["genre-item"]
             }
           >
-            <Button color="link" onClick={() => onSelectGenre(genre)}>
+            <Button color="link" onClick={() => setSelectedGenreId(genre.id)}>
               <img
                 src={getCroppedImageUrl(genre.image_background)}
                 alt={`${genre.name} genre`}

@@ -1,19 +1,14 @@
 import { useState } from "react";
 import style from "./PlatformSelector.module.css";
 import { FaChevronDown } from "react-icons/fa";
-import usePlatforms, { Platform } from "../../hooks/usePlatforms";
+import usePlatforms from "../../hooks/usePlatforms";
 import usePlatform from "../../hooks/usePlatform";
+import useGameQueryStore from "../../store";
 
-interface PlatformSelectorProps {
-  onSelectPlatform: (platform: Platform) => void;
-  selectedPlatformId?: number;
-}
-
-const PlatformSelector = ({
-  onSelectPlatform,
-  selectedPlatformId,
-}: PlatformSelectorProps) => {
+const PlatformSelector = () => {
   const { data, error } = usePlatforms();
+  const selectedPlatformId = useGameQueryStore((s) => s.gameQuery.platformId);
+  const setSelectedPlatformId = useGameQueryStore((s) => s.setPlatformId);
   const selectedPlatform = usePlatform(selectedPlatformId);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +30,7 @@ const PlatformSelector = ({
               key={platform.id}
               className={style["list-item"]}
               onClick={() => {
-                onSelectPlatform(platform);
+                setSelectedPlatformId(platform.id);
                 setIsOpen(false);
               }}
             >

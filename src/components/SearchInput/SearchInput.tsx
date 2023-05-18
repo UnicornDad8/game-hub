@@ -1,18 +1,17 @@
 import { useRef } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
+import useGameQueryStore from "../../store";
 import style from "./SearchInput.module.css";
 
-interface SearchInputProps {
-  onSearch: (searchText: string) => void;
-}
-
-const SearchInput = ({ onSearch }: SearchInputProps) => {
+const SearchInput = () => {
   const searchRef = useRef<HTMLInputElement>(null);
+  const setSearchText = useGameQueryStore((s) => s.setSearchText);
+
   return (
     <form
       onSubmit={(event) => {
         event.preventDefault();
-        if (searchRef.current) onSearch(searchRef.current.value);
+        if (searchRef.current) setSearchText(searchRef.current.value);
       }}
       className={style["search-box"]}
     >

@@ -1,13 +1,9 @@
 import { useState } from "react";
 import style from "./SortSelector.module.css";
 import { FaChevronDown } from "react-icons/fa";
+import useGameQueryStore from "../../store";
 
-interface SortSelectorProps {
-  onSelectSortOrder: (sortOrder: string) => void;
-  sortOrder: string;
-}
-
-const SortSelector = ({ onSelectSortOrder, sortOrder }: SortSelectorProps) => {
+const SortSelector = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggling = () => setIsOpen(!isOpen);
@@ -21,6 +17,8 @@ const SortSelector = ({ onSelectSortOrder, sortOrder }: SortSelectorProps) => {
     { value: "-rating", label: "Average rating" },
   ];
 
+  const setSortOrder = useGameQueryStore((s) => s.setSortOrder);
+  const sortOrder = useGameQueryStore((s) => s.gameQuery.sortOrder);
   const currentSortOrder = sortOrders.find(
     (order) => order.value === sortOrder
   );
@@ -39,7 +37,7 @@ const SortSelector = ({ onSelectSortOrder, sortOrder }: SortSelectorProps) => {
               value={order.value}
               className={style["list-item"]}
               onClick={() => {
-                onSelectSortOrder(order.value);
+                setSortOrder(order.value);
                 setIsOpen(false);
               }}
             >

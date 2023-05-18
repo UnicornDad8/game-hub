@@ -2,15 +2,10 @@ import { Fragment } from "react";
 import useGames from "../../hooks/useGames";
 import GameCard from "../GameCard";
 import GameCardSkeleton from "../GameCardSkeleton";
-import { GameQuery } from "../../App";
 import InfiniteScroll from "react-infinite-scroll-component";
 import style from "./GameGrid.module.css";
 
-interface GameGridProps {
-  gameQuery: GameQuery;
-}
-
-const GameGrid = ({ gameQuery }: GameGridProps) => {
+const GameGrid = () => {
   const {
     data,
     error,
@@ -18,7 +13,7 @@ const GameGrid = ({ gameQuery }: GameGridProps) => {
     isFetchingNextPage,
     fetchNextPage,
     hasNextPage,
-  } = useGames(gameQuery);
+  } = useGames();
 
   if (error) <p className={style["error-text"]}>{error.message}</p>;
 

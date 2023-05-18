@@ -5,11 +5,7 @@ import Switch from "../Switch";
 import SearchInput from "../SearchInput";
 import style from "./Navbar.module.css";
 
-interface NavbarProps {
-  onSearch: (searchText: string) => void;
-}
-
-const Navbar = ({ onSearch }: NavbarProps) => {
+const Navbar = () => {
   const { toggleTheme, theme } = useContext(ThemeContext);
 
   return (
@@ -18,7 +14,7 @@ const Navbar = ({ onSearch }: NavbarProps) => {
         <img src={logo} alt="logo" width="60px" height="60px" />
         <h3>Navbar</h3>
       </div>
-      <SearchInput onSearch={onSearch} />
+      <SearchInput />
       <Switch handleChange={toggleTheme} isChecked={theme === "dark"} />
     </nav>
   );
