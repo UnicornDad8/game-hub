@@ -1,8 +1,8 @@
 .dropdown-container {
   width: 14.5em;
   position: absolute;
-  top: 30px;
-  left: calc(7% + 220px);
+  top: 40px;
+  left: calc(20px + 220px);
 }
 
 @media (max-width: 1200px) {

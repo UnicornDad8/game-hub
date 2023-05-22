@@ -1,4 +1,6 @@
 .heading {
   color: var(--text-dark-gray);
   font-size: 46px;
+  width: 100%;
+  display: flex;
 }

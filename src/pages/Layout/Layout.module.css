@@ -1,0 +1,10 @@
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-light-gray);
+}
+
+@media (max-width: 1200px) {
+  .layout-container {
+  }
+}

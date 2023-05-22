@@ -10,9 +10,9 @@ const GameHeading = () => {
   const platformId = useGameQueryStore((s) => s.gameQuery.platformId);
   const platform = usePlatform(platformId);
 
-  const heading = `${platform?.name || ""} ${genre?.name || ""} Games`;
+  const heading = `Games ${platform?.name || ""} ${genre?.name || ""}`;
 
-  return <h1 className={style["heading"]}>{heading}</h1>;
+  return <h2 className={style["heading"]}>{heading}</h2>;
 };
 
 export default GameHeading;
