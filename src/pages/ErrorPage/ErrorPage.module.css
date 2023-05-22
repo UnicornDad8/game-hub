@@ -1,4 +1,7 @@
 .error-container {
   padding: 20px 30px;
   padding-top: 70px;
+  background: var(--bg-white);
+  min-height: 100vh;
+  color: var(--text-dark-gray);
 }

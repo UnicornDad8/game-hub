@@ -1,12 +1,15 @@
+import { useContext } from "react";
 import { isRouteErrorResponse, useRouteError } from "react-router-dom";
 import Navbar from "../../components/Navbar";
+import { ThemeContext } from "../../context/ThemeContext";
 import style from "./ErrorPage.module.css";
 
 const ErrorPage = () => {
   const error = useRouteError();
+  const { theme } = useContext(ThemeContext);
 
   return (
-    <>
+    <div className={`layout-container ${theme === "dark" && "dark"}`}>
       <Navbar />
       <div className={style["error-container"]}>
         <h2>Oops!!</h2>
@@ -16,7 +19,7 @@ const ErrorPage = () => {
             : "An unexpected error ocurred"}
         </p>
       </div>
-    </>
+    </div>
   );
 };
 
