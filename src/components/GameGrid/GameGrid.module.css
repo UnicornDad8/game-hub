@@ -55,6 +55,14 @@
   overflow: hidden;
 }
 
+.card-grow {
+  transition: all 0.15s ease-in-out;
+}
+
+.card-grow:hover {
+  transform: scale(1.1);
+}
+
 .game-card__grid li:nth-child(odd) {
   background-color: var(--bg-white);
 }

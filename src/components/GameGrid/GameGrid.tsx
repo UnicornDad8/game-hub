@@ -31,7 +31,10 @@ const GameGrid = () => {
         {data?.pages.map((page, i) => (
           <Fragment key={i}>
             {page.results.map((game, i) => (
-              <li key={game.id} className={style[`game-${i + 1}`]}>
+              <li
+                key={game.id}
+                className={`${style[`game-${i + 1}`]} ${style["card-grow"]}`}
+              >
                 <GameCard game={game} />
               </li>
             ))}
