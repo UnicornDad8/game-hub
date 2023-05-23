@@ -1,0 +1,19 @@
+.expandable-container {
+  display: flex;
+}
+
+.expandable-text {
+  color: var(--text-dark-gray);
+}
+
+.btn-expandable {
+  padding: 5px 10px;
+  font-size: 16px;
+  background: var(--bg-warning-color);
+  color: #333;
+  margin: 10px 10px;
+  border: none;
+  display: inline;
+  border-radius: 3px;
+  font-weight: 700;
+}

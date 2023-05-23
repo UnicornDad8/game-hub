@@ -1,5 +1,7 @@
 import { useParams } from "react-router-dom";
 import useGame from "../../hooks/useGame";
+import ExpandableText from "../../components/ExpandableText";
+import GameAttributes from "../../components/GameAttributes/GameAttributes";
 import style from "./GameDetailPage.module.css";
 
 const GameDetailPage = () => {
@@ -18,7 +20,8 @@ const GameDetailPage = () => {
   return (
     <div className={style["detail-container"]}>
       <h2>{game.name}</h2>
-      <p>{game.description_raw}</p>
+      <ExpandableText>{game.description_raw}</ExpandableText>
+      <GameAttributes game={game} />
     </div>
   );
 };

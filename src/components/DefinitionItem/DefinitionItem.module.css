@@ -1,0 +1,16 @@
+.definition-container {
+  margin: 10px 0;
+  margin-bottom: 30px;
+}
+
+.term {
+  font-weight: 700;
+  font-size: 20px;
+  color: rgb(146, 142, 142);
+  margin-bottom: 10px;
+}
+
+.text {
+  font-size: 20px;
+  color: var(--text-dark-gray);
+}

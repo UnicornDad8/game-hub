@@ -13,8 +13,8 @@ const HomePage = () => {
 
   return (
     <SkeletonTheme
-      baseColor={theme === "dark" ? "#202020" : "#eaeaea"}
-      highlightColor={theme === "dark" ? "#fff" : "#e3e3e3"}
+      baseColor={theme === "dark" ? "#202020" : "#e1e1e1"}
+      highlightColor={theme === "dark" ? "#313131" : "#afadad"}
     >
       <div className={style["home-container"]}>
         <aside className={style["aside-container"]}>
