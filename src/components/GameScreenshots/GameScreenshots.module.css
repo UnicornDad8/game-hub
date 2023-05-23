@@ -5,8 +5,8 @@
 }
 
 .sreenshot-box {
-  width: 700px;
-  height: 400px;
+  width: 340px;
+  height: 150px;
   overflow: hidden;
 }
 
@@ -31,7 +31,16 @@
 @media only screen and (max-width: 600px) {
   .sreenshot-box {
     width: 100%;
-    height: 300px;
+    height: 200px;
+  }
+
+  .sreenshot-box {
+    width: 400px;
+    height: 150px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .screenshots-box img {

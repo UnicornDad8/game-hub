@@ -13,7 +13,7 @@ const Navbar = () => {
     <nav className={style["navbar"]}>
       <Link to="/" className={style["navbar-logo-text"]}>
         <img src={logo} alt="logo" width="60px" height="60px" />
-        <h3>Navbar</h3>
+        <h3>GHub</h3>
       </Link>
       <SearchInput />
       <Switch handleChange={toggleTheme} isChecked={theme === "dark"} />

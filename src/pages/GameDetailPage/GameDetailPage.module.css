@@ -4,4 +4,17 @@
   color: var(--text-dark-gray);
   background: var(--bg-white);
   min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+@media only screen and (max-width: 1400px) {
+  .detail-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.detail-left {
+  padding-top: 30px;
 }

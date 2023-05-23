@@ -21,11 +21,15 @@ const GameDetailPage = () => {
 
   return (
     <div className={style["detail-container"]}>
-      <h2>{game.name}</h2>
-      <ExpandableText>{game.description_raw}</ExpandableText>
-      <GameAttributes game={game} />
-      <GameTrailer gameId={game.id} />
-      <GameScreenshots gameId={game.id} />
+      <div className={style["detail-left"]}>
+        <h2>{game.name}</h2>
+        <ExpandableText>{game.description_raw}</ExpandableText>
+        <GameAttributes game={game} />
+      </div>
+      <div>
+        <GameTrailer gameId={game.id} />
+        <GameScreenshots gameId={game.id} />
+      </div>
     </div>
   );
 };
