@@ -1,8 +1,9 @@
 import { useParams } from "react-router-dom";
 import useGame from "../../hooks/useGame";
 import ExpandableText from "../../components/ExpandableText";
-import GameAttributes from "../../components/GameAttributes/GameAttributes";
+import GameAttributes from "../../components/GameAttributes";
 import style from "./GameDetailPage.module.css";
+import GameTrailer from "../../components/GameTrailer";
 
 const GameDetailPage = () => {
   const { slug } = useParams();
@@ -22,6 +23,7 @@ const GameDetailPage = () => {
       <h2>{game.name}</h2>
       <ExpandableText>{game.description_raw}</ExpandableText>
       <GameAttributes game={game} />
+      <GameTrailer gameId={game.id} />
     </div>
   );
 };
