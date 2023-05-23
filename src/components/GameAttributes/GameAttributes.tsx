@@ -1,4 +1,4 @@
-import { Game } from "../../entities/Game";
+import Game from "../../entities/Game";
 import DefinitionItem from "../DefinitionItem";
 import CriticScore from "../CriticScore";
 import style from "./GameAttributes.module.css";

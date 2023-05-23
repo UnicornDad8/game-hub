@@ -2,9 +2,12 @@
 .checkbox-box {
   display: flex;
   align-items: center;
-  width: 350px;
   margin-top: 5px;
   margin-left: 20px;
+}
+
+.checkbox-box p {
+  margin-top: 5px;
 }
 /* Customize the label (the container) */
 .container {
@@ -74,4 +77,10 @@
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+@media only screen and (max-width: 600px) {
+  .checkbox-box {
+    display: none;
+  }
 }

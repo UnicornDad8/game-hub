@@ -18,3 +18,9 @@
   text-decoration: none;
   color: var(--text-dark-gray);
 }
+
+@media only screen and (max-width: 600px) {
+  .navbar-logo-text h3 {
+    display: none;
+  }
+}

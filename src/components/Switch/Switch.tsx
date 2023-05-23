@@ -15,7 +15,7 @@ const Switch = ({ isChecked, handleChange }: SwitchProps) => {
       >
         <input type="checkbox" checked={isChecked} onChange={handleChange} />
         <div className={style["checkmark"]} />
-        toggle theme
+        <p>theme</p>
       </label>
     </div>
   );

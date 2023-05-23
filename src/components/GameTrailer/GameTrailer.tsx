@@ -1,4 +1,5 @@
 import useTrailers from "../../hooks/useTrailers";
+import style from "./GameTrailer.module.css";
 
 interface GameTrailerProps {
   gameId: number;
@@ -14,13 +15,9 @@ const GameTrailer = ({ gameId }: GameTrailerProps) => {
   const first = data?.results[0];
 
   return first ? (
-    <video
-      src={first.data[480]}
-      poster={first.preview}
-      controls
-      width="690px"
-      height="480px"
-    />
+    <div className={style["trailer-container"]}>
+      <video src={first.data[480]} poster={first.preview} controls />
+    </div>
   ) : null;
 };
 

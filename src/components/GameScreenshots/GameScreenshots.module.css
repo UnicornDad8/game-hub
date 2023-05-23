@@ -5,13 +5,16 @@
 }
 
 .sreenshot-box {
-  width: 340px;
+  width: 100%;
   height: 150px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .screenshots-box img {
-  width: 50%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }
@@ -23,8 +26,20 @@
   }
 
   .sreenshot-box {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     display: block;
     margin: 0 auto;
+  }
+
+  .screenshots-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 }
 
@@ -35,8 +50,8 @@
   }
 
   .sreenshot-box {
-    width: 400px;
-    height: 150px;
+    width: 100%;
+    height: 130px;
     overflow: hidden;
     display: flex;
     align-items: center;

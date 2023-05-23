@@ -16,7 +16,7 @@ const GameScreenshots = ({ gameId }: GameScreenshotsProps) => {
     <div className={style["screenshots-grid"]}>
       {data?.results.map((file) => (
         <div key={file.id} className={style["sreenshot-box"]}>
-          <img src={file.image} width={340} height={150} />
+          <img src={file.image} />
         </div>
       ))}
     </div>
