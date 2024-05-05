@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
-import logo from "../../assets/logo.webp";
+import logo from "../../assets/logo.jpg";
 import Switch from "../Switch";
 import SearchInput from "../SearchInput";
 import style from "./Navbar.module.css";
@@ -12,7 +12,9 @@ const Navbar = () => {
   return (
     <nav className={style["navbar"]}>
       <Link to="/" className={style["navbar-logo-text"]}>
-        <img src={logo} alt="logo" width="60px" height="60px" />
+        <div className={style["logo-box"]}>
+          <img src={logo} alt="logo" />
+        </div>
         <h3>GHub</h3>
       </Link>
       <SearchInput />
