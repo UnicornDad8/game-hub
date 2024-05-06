@@ -2,7 +2,7 @@
 
 > This is a page made with React and Typescript, which consumes a videogame API and it has really cool querying and filtering functionality.
 
-![screenshot](./app_screen.png)
+![screenshot](./Game-Hub.screenshot.png)
 
 ## 🔧 Built With
 
