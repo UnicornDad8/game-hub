@@ -17,7 +17,7 @@
 
 ## 🔴 Live Demo
 
-[Live Demo](https://game-hub-lambda.vercel.app/)
+[Live Demo](https://game-hub-lamda-exj0hy44y-unicorndad8s-projects.vercel.app/)
 
 ## 🛠 Getting Started
 
