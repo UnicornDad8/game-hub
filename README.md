@@ -14,6 +14,7 @@
 - hooks
 - Zustand
 - react-query
+- react-loading-skeleton
 
 ## 🔴 Live Demo
 
