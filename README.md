@@ -2,7 +2,7 @@
 
 > This is a page made with React and Typescript, which consumes a videogame API and it has really cool querying and filtering functionality.
 
-![screenshot](./Game-Hub.screenshot.png)
+![screenshot](./app_screenshot.png)
 
 ## 🔧 Built With
 
@@ -18,7 +18,7 @@
 
 ## 🔴 Live Demo
 
-[Live Demo](https://game-hub-lamda-exj0hy44y-unicorndad8s-projects.vercel.app/)
+[Live Demo](https://game-hub-lambda-f8ywja27x-unicorndad8s-projects.vercel.app/)
 
 ## 🛠 Getting Started
 
