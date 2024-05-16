@@ -50,6 +50,11 @@
 }
 
 @media (max-width: 1200px) {
+  .home-container {
+    display: block;
+    width: 100vw;
+  }
+
   .aside-container {
     display: none;
     width: 0px;
@@ -67,7 +72,6 @@
   }
 
   .heading {
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,9 +81,10 @@
 
   .selectors {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin: 10px auto;
+    margin: 20px auto;
   }
 }
