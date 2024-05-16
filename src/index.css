@@ -90,8 +90,9 @@ body {
 
 .center-spinner {
   width: 100%;
+  grid-column: span 2;
   display: block;
-  margin: 0 auto;
+  margin: 30px auto;
 }
 
 .spinner-border {

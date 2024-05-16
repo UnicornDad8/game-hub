@@ -12,8 +12,10 @@ const GameDetailPage = () => {
 
   if (isLoading)
     return (
-      <div className="center-spinner">
-        <div className="spinner-border" />
+      <div className={style["detail-container"]}>
+        <div className="center-spinner">
+          <div className="spinner-border" />
+        </div>
       </div>
     );
 

@@ -1,15 +1,14 @@
 .game-card__grid {
   list-style: none;
-  padding: 10px;
   margin: 30px auto;
-  padding: 0 20px;
+  padding: 10px 20px;
   display: grid;
   /* Define Auto Row size */
-  grid-auto-rows: 470px;
+  grid-auto-rows: 1fr;
   /*Define our columns */
-  grid-template-columns: repeat(3, minmax(280px, 300px));
+  grid-template-columns: repeat(3, minmax(280px, 400px));
   justify-content: center;
-  grid-gap: 2em;
+  grid-gap: 30px;
   padding-top: 120px;
 }
 
@@ -22,7 +21,7 @@
 
   .game-card__grid li {
     display: flex;
-    width: 300px;
+    width: 100%;
     margin: 0 auto;
     justify-content: center;
   }
@@ -35,7 +34,7 @@
 
 @media only screen and (max-width: 600px) {
   .game-card__grid {
-    max-width: 300px;
+    max-width: 100%;
     grid-template-columns: 1fr;
     justify-content: center;
     margin: 30px auto;

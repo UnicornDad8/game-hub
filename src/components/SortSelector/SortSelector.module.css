@@ -1,15 +1,5 @@
 .dropdown-container {
   width: 14.5em;
-  position: absolute;
-  top: 40px;
-  left: calc(20px + 220px);
-}
-
-@media (max-width: 1200px) {
-  .dropdown-container {
-    position: relative;
-    left: 0;
-  }
 }
 
 .dropdown-header {
