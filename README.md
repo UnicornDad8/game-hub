@@ -1,6 +1,7 @@
 ## 🧐 Game-Hub
 
 > This is a page made with React and Typescript, which consumes a videogame API and it has really cool querying and filtering functionality.
+> also it is styled with vanilla css modules.
 
 ![screenshot](./app_screenshot.png)
 
